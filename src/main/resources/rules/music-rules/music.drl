@@ -1,0 +1,207 @@
+package rules;
+dialect  "mvel"
+import music.Question
+import music.Question.Answer
+import music.BrokenAmplifier
+import java.util.Scanner
+
+declare FIXED
+end
+
+
+rule "INIT"
+when
+then
+    insert(BrokenAmplifier.newQ1());
+end
+
+
+rule "AskQuestion"
+when
+    qu : Question(q != null, a == Answer.NONE)
+then
+    if(qu.advice != null) System.out.println(qu.advice);
+    if(qu.q != null) {
+        System.out.println(qu.q);
+        System.out.println(">> ");
+        Scanner keyboard = new Scanner(System.in);
+        String answer = keyboard.nextLine();
+        if(answer == "y" || answer == "yes")
+            qu.a = Answer.YES;
+        else
+            qu.a = Answer.NO;
+        update(qu);
+    }
+end
+
+rule "ShowFinalAdvice"
+when
+    qu : Question(q == null)
+then
+    System.out.println(qu.advice);
+    insert(FIXED)
+end
+
+
+rule "1_NO"
+when
+    Question(id == 1, a == Answer.NO)
+then
+System.out.println("elo");
+    insert(BrokenAmplifier.newQ2());
+end
+
+rule "2_YES"
+when
+    Question(id == 2, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ3());
+end
+
+rule "3_NO"
+when
+    Question(id == 3, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ4());
+end
+
+rule "4_NO"
+when
+    Question(id == 4, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ5());
+end
+
+
+rule "5_NO"
+when
+    Question(id == 5, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ6());
+end
+
+
+rule "6_NO"
+when
+    Question(id == 6, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ7());
+end
+
+
+rule "7_NO"
+when
+    Question(id == 7, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ8());
+end
+
+
+rule "7_YES"
+when
+    Question(id == 7, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ9());
+end
+
+
+rule "6_YES"
+when
+    Question(id == 6, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ10());
+end
+
+
+rule "5_YES"
+when
+    Question(id == 5, a == Answer.YES)
+then
+    insert(FIXED);
+end
+
+rule "4_YES"
+when
+    Question(id == 4, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ11());
+end
+
+
+rule "11_NO"
+when
+    Question(id == 11, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ12());
+end
+
+
+rule "11_YES"
+when
+    Question(id == 11, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ13());
+end
+
+
+rule "3_YES"
+when
+    Question(id == 3, a == Answer.YES)
+then
+    insert(FIXED);
+end
+
+
+rule "2_NO"
+when
+    Question(id == 2, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ14());
+end
+
+
+rule "14_YES"
+when
+    Question(id == 14, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ15());
+end
+
+
+rule "15_YES"
+when
+    Question(id == 15, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ16());
+end
+
+
+rule "15_NO"
+when
+    Question(id == 15, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ17());
+end
+
+
+rule "17_NO"
+when
+    Question(id == 17, a == Answer.NO)
+then
+    insert(FIXED);
+end
+
+rule "17_YES"
+when
+    Question(id == 17, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ18());
+end
+
+
+rule "14_NO"
+when
+    Question(id == 14, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ19());
+end

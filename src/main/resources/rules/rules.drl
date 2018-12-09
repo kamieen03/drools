@@ -1,0 +1,78 @@
+package com.drolls.example
+
+rule "WstawPomiar"
+when
+then
+    insert(new Pomiar(10, true));
+    insert(new Pomiar(10, true));
+end
+
+
+rule "WstawPozar"
+when
+    exists Pomiar(getDym() == true || getTemperatura() > 150)
+then
+    //measure.setDym(false);
+    //measure.setTemperatura(150);
+    insert(new Pozar());
+    //update(measure);
+end
+
+
+rule "PaliSie"
+when
+    poz: Pozar()
+then
+    //measure.setDym(false);
+    //measure.setTemperatura(150);
+    System.out.println("Pali się");
+end
+
+
+
+rule "PozarTelefon"
+when
+    poz: Pozar()
+then
+    insert(new Telefon("112"));
+end
+
+
+rule "Dzwon"
+when
+    tel : Telefon(number : getNumer())
+then
+    System.out.println("Proszę zadzwonić na numer " + number);
+    //update(tel);
+end
+
+
+rule "Straz"
+when
+    straz : Straz()
+    poz : Pozar()
+then
+    System.out.println("Straz przyjechala!");
+    retract(poz);
+    System.out.println("Pozar ugaszony!!!!!");
+end
+
+
+rule "StrazGo"
+when
+    straz: Straz()
+    not Pozar()
+then
+    retract(straz);
+    System.out.println("Straz odjechala");
+end
+
+
+
+
+
+
+
+
+
+
