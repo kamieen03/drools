@@ -83,7 +83,7 @@ public class BrokenAmplifier {
 
     public static Question newQ13() {
         return new Question(null,
-                "Check and repair pickup on intrument.",
+                "Check and repair pickup on instrument.",
                 13);
     }
 
@@ -129,4 +129,79 @@ public class BrokenAmplifier {
                 "Check for blown house fuse and replace it.",
                 19);
     }
+
+
+    public static Question newQ20() {
+        return new Question("Is sound distorted on all channels?",
+                null,
+                20);
+    }
+
+    public static Question newQ21() {
+        return new Question("Is sound OK?",
+                "Control settings may be too high, especially volume.",
+                21);
+    }
+
+
+    public static Question newQ22() {
+        return new Question("Is sound OK?",
+                "Pickup, instrument or connecting cable may be defective; " +
+                        "substitute with one known to be good if possible " +
+                        "(especially the cable).",
+                22);
+    }
+
+    public static Question newQ23() {
+        return new Question("Is sound OK?",
+                "See that tubes are firmly seated in their sockets. " +
+                        "Also any internal wiring using plugins; must be secure.",
+                23);
+    }
+
+    public static Question newQ24() {
+        return new Question("Is sound OK now?",
+                "Check tubes: if possible substitute tubes known to " +
+                        "be good, one at a time, starting with the output tubes. " +
+                        "Common output tube types are: 6V6, 6L6, 5881, EL-37, " +
+                        "EL-34, EL-84, KT-66, ^BG6, 6BQ5, 7591, 7027A.",
+                24);
+    }
+
+    public static Question newQ25() {
+        return new Question("Is sound OK now?",
+                "Replace rectifier tube. This is probably a 5U4, " +
+                        "5Y3, 6X4, 6X5, 6AX5, 5V4, 6CA4, 5AR4.",
+                25);
+    }
+
+    public static Question newQ26() {
+        return new Question("Is sound OK now?",
+                "Follow the same procedure with the rest of the " +
+                        "tubes: the pahse inverter and voltage amplifier " +
+                        "tubes; Common tube types: 6SL7, 6SN7, 12AY7, 12AU7, " +
+                        "12AT7, 6CG7, 6EU7, 7025.",
+                26);
+    }
+
+    public static Question newQ27() {
+        return new Question(null,
+                "Disconnect the speaker. Use test speaker or " +
+                        "test amplifier to determine which is distorting.",
+                27);
+    }
+
+    public static Question newQ28() {
+        return new Question("Is sound OK now?",
+                "Check Preamp Tubes. Most common Preamp Tube " +
+                        "types are: 6SL7, 6SN7, 12AX7, 12AY7, 12AU7, " +
+                        "12AT7, 6C5, 6J5, 6SC7, 6CG7, 6EU7, 6AN8. " +
+                        "If amplifier has more than one of these, " +
+                        "try interchanging, using Preamp Tube from the " +
+                        "channel that sounds OK in channel that distorts.",
+                28);
+    }
+
+
+
 }

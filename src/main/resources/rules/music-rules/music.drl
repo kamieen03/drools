@@ -6,6 +6,7 @@ import music.BrokenAmplifier
 import java.util.Scanner
 
 declare FIXED
+    f : Boolean
 end
 
 
@@ -23,7 +24,7 @@ then
     if(qu.advice != null) System.out.println(qu.advice);
     if(qu.q != null) {
         System.out.println(qu.q);
-        System.out.println(">> ");
+        System.out.print(">> ");
         Scanner keyboard = new Scanner(System.in);
         String answer = keyboard.nextLine();
         if(answer == "y" || answer == "yes")
@@ -39,7 +40,14 @@ when
     qu : Question(q == null)
 then
     System.out.println(qu.advice);
-    insert(FIXED)
+    insert(new FIXED())
+end
+
+rule "IsFixed"
+when
+    FIXED()
+then
+    System.out.println("Diagnosis finished.");
 end
 
 
@@ -47,7 +55,6 @@ rule "1_NO"
 when
     Question(id == 1, a == Answer.NO)
 then
-System.out.println("elo");
     insert(BrokenAmplifier.newQ2());
 end
 
@@ -117,7 +124,7 @@ rule "5_YES"
 when
     Question(id == 5, a == Answer.YES)
 then
-    insert(FIXED);
+    insert(new FIXED());
 end
 
 rule "4_YES"
@@ -148,7 +155,7 @@ rule "3_YES"
 when
     Question(id == 3, a == Answer.YES)
 then
-    insert(FIXED);
+    insert(new FIXED());
 end
 
 
@@ -188,7 +195,7 @@ rule "17_NO"
 when
     Question(id == 17, a == Answer.NO)
 then
-    insert(FIXED);
+    insert(new FIXED());
 end
 
 rule "17_YES"
@@ -205,3 +212,127 @@ when
 then
     insert(BrokenAmplifier.newQ19());
 end
+
+//----------right half-----------
+
+rule "1_YES"
+when
+    Question(id == 1, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ20()) ;
+end
+
+
+rule "20_YES"
+when
+    Question(id == 20, a == Answer.YES)
+then
+    insert(BrokenAmplifier.newQ21()) ;
+end
+
+
+rule "21_NO"
+when
+    Question(id == 21, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ22()) ;
+end
+
+rule "21_YES"
+when
+    Question(id == 21, a == Answer.YES)
+then
+    insert(new FIXED());
+end
+
+rule "22_NO"
+when
+    Question(id == 22, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ23()) ;
+end
+
+rule "22_YES"
+when
+    Question(id == 22, a == Answer.YES)
+then
+    insert(new FIXED()) ;
+end
+
+rule "23_NO"
+when
+    Question(id == 23, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ24()) ;
+end
+
+rule "23_YES"
+when
+    Question(id == 23, a == Answer.YES)
+then
+    insert(new FIXED()) ;
+end
+
+rule "24_NO"
+when
+    Question(id == 24, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ25()) ;
+end
+
+rule "24_YES"
+when
+    Question(id == 24, a == Answer.YES)
+then
+    insert(new FIXED()) ;
+end
+
+rule "25_NO"
+when
+    Question(id == 25, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ26()) ;
+end
+
+rule "25_YES"
+when
+    Question(id == 25, a == Answer.YES)
+then
+    insert(new FIXED());
+end
+
+rule "26_NO"
+when
+    Question(id == 26, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ27()) ;
+end
+
+rule "26_YES"
+when
+    Question(id == 26, a == Answer.YES)
+then
+    insert(new FIXED()) ;
+end
+
+rule "20_NO"
+when
+    Question(id == 20, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ28()) ;
+end
+
+rule "28_NO"
+when
+    Question(id == 28, a == Answer.NO)
+then
+    insert(BrokenAmplifier.newQ18()) ;
+end
+
+rule "28_YES"
+when
+    Question(id == 28, a == Answer.YES)
+then
+    insert(new FIXED()) ;
+end
+
