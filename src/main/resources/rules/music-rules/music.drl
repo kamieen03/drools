@@ -2,81 +2,39 @@ package rules;
 dialect  "mvel"
 import music.Question
 import music.Question.Answer
-import music.BrokenAmplifier
 import java.util.Scanner
+import music.Controller
 
 declare FIXED
     f : Boolean
 end
 
-
-rule "INIT"
-when
-then
-    insert(BrokenAmplifier.newQ1());
-end
-
-
-rule "AskQuestion"
-when
-    qu : Question(q != null, a == Answer.NONE)
-then
-    if(qu.advice != null) System.out.println(qu.advice);
-    if(qu.q != null) {
-        System.out.println(qu.q);
-        System.out.print(">> ");
-        Scanner keyboard = new Scanner(System.in);
-        String answer = keyboard.nextLine();
-        if(answer == "y" || answer == "yes")
-            qu.a = Answer.YES;
-        else
-            qu.a = Answer.NO;
-        update(qu);
-    }
-end
-
-rule "ShowFinalAdvice"
-when
-    qu : Question(q == null)
-then
-    System.out.println(qu.advice);
-    insert(new FIXED())
-end
-
-rule "IsFixed"
-when
-    FIXED()
-then
-    System.out.println("Diagnosis finished.");
-end
-
-
 rule "1_NO"
 when
     Question(id == 1, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ2());
+    insert(Controller.loadQuestion(2));
 end
 
 rule "2_YES"
 when
     Question(id == 2, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ3());
+    insert(Controller.loadQuestion(3));
 end
 
 rule "3_NO"
 when
     Question(id == 3, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ4());
+    insert(Controller.loadQuestion(4));
 end
 
 rule "4_NO"
 when
     Question(id == 4, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ5());
+    insert(Controller.loadQuestion(5));
 end
 
 
@@ -84,7 +42,7 @@ rule "5_NO"
 when
     Question(id == 5, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ6());
+    insert(Controller.loadQuestion(6));
 end
 
 
@@ -92,7 +50,7 @@ rule "6_NO"
 when
     Question(id == 6, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ7());
+    insert(Controller.loadQuestion(7));
 end
 
 
@@ -100,7 +58,7 @@ rule "7_NO"
 when
     Question(id == 7, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ8());
+    insert(Controller.loadQuestion(8));
 end
 
 
@@ -108,7 +66,7 @@ rule "7_YES"
 when
     Question(id == 7, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ9());
+    insert(Controller.loadQuestion(9));
 end
 
 
@@ -116,7 +74,7 @@ rule "6_YES"
 when
     Question(id == 6, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ10());
+    insert(Controller.loadQuestion(10));
 end
 
 
@@ -131,7 +89,7 @@ rule "4_YES"
 when
     Question(id == 4, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ11());
+    insert(Controller.loadQuestion(11));
 end
 
 
@@ -139,7 +97,7 @@ rule "11_NO"
 when
     Question(id == 11, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ12());
+    insert(Controller.loadQuestion(12));
 end
 
 
@@ -147,7 +105,7 @@ rule "11_YES"
 when
     Question(id == 11, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ13());
+    insert(Controller.loadQuestion(13));
 end
 
 
@@ -163,7 +121,7 @@ rule "2_NO"
 when
     Question(id == 2, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ14());
+    insert(Controller.loadQuestion(14));
 end
 
 
@@ -171,7 +129,7 @@ rule "14_YES"
 when
     Question(id == 14, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ15());
+    insert(Controller.loadQuestion(15));
 end
 
 
@@ -179,7 +137,7 @@ rule "15_YES"
 when
     Question(id == 15, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ16());
+    insert(Controller.loadQuestion(16));
 end
 
 
@@ -187,7 +145,7 @@ rule "15_NO"
 when
     Question(id == 15, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ17());
+    insert(Controller.loadQuestion(17));
 end
 
 
@@ -202,7 +160,7 @@ rule "17_YES"
 when
     Question(id == 17, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ18());
+    insert(Controller.loadQuestion(18));
 end
 
 
@@ -210,7 +168,7 @@ rule "14_NO"
 when
     Question(id == 14, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ19());
+    insert(Controller.loadQuestion(19));
 end
 
 //----------right half-----------
@@ -219,7 +177,7 @@ rule "1_YES"
 when
     Question(id == 1, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ20()) ;
+    insert(Controller.loadQuestion(20)) ;
 end
 
 
@@ -227,7 +185,7 @@ rule "20_YES"
 when
     Question(id == 20, a == Answer.YES)
 then
-    insert(BrokenAmplifier.newQ21()) ;
+    insert(Controller.loadQuestion(21)) ;
 end
 
 
@@ -235,7 +193,7 @@ rule "21_NO"
 when
     Question(id == 21, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ22()) ;
+    insert(Controller.loadQuestion(22)) ;
 end
 
 rule "21_YES"
@@ -249,7 +207,7 @@ rule "22_NO"
 when
     Question(id == 22, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ23()) ;
+    insert(Controller.loadQuestion(23)) ;
 end
 
 rule "22_YES"
@@ -263,7 +221,7 @@ rule "23_NO"
 when
     Question(id == 23, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ24()) ;
+    insert(Controller.loadQuestion(24)) ;
 end
 
 rule "23_YES"
@@ -277,7 +235,7 @@ rule "24_NO"
 when
     Question(id == 24, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ25()) ;
+    insert(Controller.loadQuestion(25)) ;
 end
 
 rule "24_YES"
@@ -291,7 +249,7 @@ rule "25_NO"
 when
     Question(id == 25, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ26()) ;
+    insert(Controller.loadQuestion(26)) ;
 end
 
 rule "25_YES"
@@ -305,7 +263,7 @@ rule "26_NO"
 when
     Question(id == 26, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ27()) ;
+    insert(Controller.loadQuestion(27)) ;
 end
 
 rule "26_YES"
@@ -319,14 +277,14 @@ rule "20_NO"
 when
     Question(id == 20, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ28()) ;
+    insert(Controller.loadQuestion(28)) ;
 end
 
 rule "28_NO"
 when
     Question(id == 28, a == Answer.NO)
 then
-    insert(BrokenAmplifier.newQ18()) ;
+    insert(Controller.loadQuestion(18)) ;
 end
 
 rule "28_YES"

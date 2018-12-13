@@ -20,4 +20,7 @@ public class Question {
         this.advice = advice;
         this.id = id;
     }
+
+    public Question(){
+    }
 }

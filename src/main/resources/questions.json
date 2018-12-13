@@ -1,0 +1,170 @@
+{
+  "22" : {
+    "q" : "Is sound OK?",
+    "a" : "NONE",
+    "advice" : "Pickup, instrument or connecting cable may be defective; substitute with one known to be good if possible (especially the cable).",
+    "id" : 22
+  },
+  "23" : {
+    "q" : "Is sound OK?",
+    "a" : "NONE",
+    "advice" : "See that tubes are firmly seated in their sockets. Also any internal wiring using plugins; must be secure.",
+    "id" : 23
+  },
+  "24" : {
+    "q" : "Is sound OK now?",
+    "a" : "NONE",
+    "advice" : "Check tubes: if possible substitute tubes known to be good, one at a time, starting with the output tubes. Common output tube types are: 6V6, 6L6, 5881, EL-37, EL-34, EL-84, KT-66, ^BG6, 6BQ5, 7591, 7027A.",
+    "id" : 24
+  },
+  "25" : {
+    "q" : "Is sound OK now?",
+    "a" : "NONE",
+    "advice" : "Replace rectifier tube. This is probably a 5U4, 5Y3, 6X4, 6X5, 6AX5, 5V4, 6CA4, 5AR4.",
+    "id" : 25
+  },
+  "26" : {
+    "q" : "Is sound OK now?",
+    "a" : "NONE",
+    "advice" : "Follow the same procedure with the rest of the tubes: the pahse inverter and voltage amplifier tubes; Common tube types: 6SL7, 6SN7, 12AY7, 12AU7, 12AT7, 6CG7, 6EU7, 7025.",
+    "id" : 26
+  },
+  "27" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Disconnect the speaker. Use test speaker or test amplifier to determine which is distorting.",
+    "id" : 27
+  },
+  "28" : {
+    "q" : "Is sound OK now?",
+    "a" : "NONE",
+    "advice" : "Check Preamp Tubes. Most common Preamp Tube types are: 6SL7, 6SN7, 12AX7, 12AY7, 12AU7, 12AT7, 6C5, 6J5, 6SC7, 6CG7, 6EU7, 6AN8. If amplifier has more than one of these, try interchanging, using Preamp Tube from the channel that sounds OK in channel that distorts.",
+    "id" : 28
+  },
+  "10" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Spekaer, leads and output transformer secondary OK.Take amplifier to a competent repair service.",
+    "id" : 10
+  },
+  "11" : {
+    "q" : "Has humming grew louder?",
+    "a" : "NONE",
+    "advice" : "Unplug cable from instrument and touch the tip of the plug.",
+    "id" : 11
+  },
+  "12" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Check cable between instrument and amplifier.Repair or substitute with a good cable.",
+    "id" : 12
+  },
+  "13" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Check and repair pickup on instrument.",
+    "id" : 13
+  },
+  "14" : {
+    "q" : "Is outlet alright?",
+    "a" : "NONE",
+    "advice" : "Check wall outlet. Plug in something you know that works.",
+    "id" : 14
+  },
+  "15" : {
+    "q" : "Is fuse OK?",
+    "a" : "NONE",
+    "advice" : "Replace fuse on amplifier (fuse could be defective and stillappear to be OK.",
+    "id" : 15
+  },
+  "16" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Check line cord, plug or on-off switch.",
+    "id" : 16
+  },
+  "17" : {
+    "q" : "Does fuse blow repeteadly?",
+    "a" : "NONE",
+    "advice" : "Check for short in amplifier.Sobstitute tubes if possible and by prcess of elimination locate shorted one. Especially tubes such as 5Y3, 5U4, 5AR4, 6V6, 6L6, 7591, 7027A, EL-37, 5881.",
+    "id" : 17
+  },
+  "18" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Take amplifier to a competent repair service.",
+    "id" : 18
+  },
+  "19" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Check for blown house fuse and replace it.",
+    "id" : 19
+  },
+  "1" : {
+    "q" : "Is there sound?",
+    "a" : "NONE",
+    "advice" : null,
+    "id" : 1
+  },
+  "2" : {
+    "q" : "Are tubes and pilot lamps lighted?",
+    "a" : "NONE",
+    "advice" : null,
+    "id" : 2
+  },
+  "3" : {
+    "q" : "Can you hear a sound?",
+    "a" : "NONE",
+    "advice" : "Check controls on amplifier for normal setting.Instrument controls should be all the way on.Also check standby switch, if any.",
+    "id" : 3
+  },
+  "4" : {
+    "q" : "Can you hear humming?",
+    "a" : "NONE",
+    "advice" : "Turn volume all the way on and listen to hum.",
+    "id" : 4
+  },
+  "5" : {
+    "q" : "Can you hear the sound?",
+    "a" : "NONE",
+    "advice" : "Substitute tubes with known good ones.",
+    "id" : 5
+  },
+  "6" : {
+    "q" : "Can you hear the click?",
+    "a" : "NONE",
+    "advice" : "Unsolder one of the wires from speaker.Touch one end of a flashlight battery to the unsoldered speaker wire,the other to the empty speaker terminal. Listen for a click from speaker.",
+    "id" : 6
+  },
+  "7" : {
+    "q" : "Can you hear the clicking sound?",
+    "a" : "NONE",
+    "advice" : "Defective speaker, leads or uoutput transformer.Apply flashlight battery voltage directly to speaker termianls.",
+    "id" : 7
+  },
+  "8" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Speaker is OK, the trouble is in the speaker leads or output transformer.Repair leads by yourself or take amplifier to a competentrepair service.",
+    "id" : 8
+  },
+  "9" : {
+    "q" : null,
+    "a" : "NONE",
+    "advice" : "Voice coil on speaker open; replace speaker.",
+    "id" : 9
+  },
+  "20" : {
+    "q" : "Is sound distorted on all channels?",
+    "a" : "NONE",
+    "advice" : null,
+    "id" : 20
+  },
+  "21" : {
+    "q" : "Is sound OK?",
+    "a" : "NONE",
+    "advice" : "Control settings may be too high, especially volume.",
+    "id" : 21
+  }
+}
