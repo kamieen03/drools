@@ -1,0 +1,39 @@
+.root{
+    -fx-font-size: 16px;
+    -fx-background-color: white;
+}
+
+.question{
+    -fx-font-size: 32px;
+}
+
+.advice{
+    -fx-font-size: 14px;
+    -fx-text-fill: #B23A4A;
+}
+
+.adviceText{
+    -fx-font-size: 16px;
+    -fx-text-fill: #B23A4A;
+}
+
+.decisionButton{
+    -fx-font-size: 32px;
+    -fx-background-radius: 0px;
+}
+
+#yesButton{
+    -fx-background-color: #59B263;
+}
+
+#yesButton:hover{
+    -fx-background-color: #60C16C;
+}
+
+#noButton{
+    -fx-background-color: #B23A4A;
+}
+
+#noButton:hover{
+    -fx-background-color: #C64153;
+}
