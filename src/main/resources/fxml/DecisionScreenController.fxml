@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,15 +12,18 @@
    <children>
       <VBox prefHeight="200.0" prefWidth="600.0">
          <children>
-            <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" prefHeight="142.0" prefWidth="600.0" styleClass="question" text="Is there any sound ?" />
-            <Label fx:id="advice" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="600.0" styleClass="advice" text="Advice" />
-            <Label fx:id="adviceText" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="104.0" prefWidth="600.0" styleClass="adviceText" text="Umyj zęby potem nogi i idz spać jak wstaniesz to bedzie lepiej" />
+            <Label fx:id="advice" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="600.0" styleClass="advice" />
+            <Label fx:id="adviceText" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="600.0" styleClass="adviceText" text="asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddasddsasda">
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding></Label>
+            <Label fx:id="question" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="102.0" prefWidth="600.0" styleClass="question" text="sadsad" />
          </children>
       </VBox>
       <HBox layoutY="200.0" prefHeight="200.0" prefWidth="600.0">
          <children>
-            <Button fx:id="yesButton" mnemonicParsing="false" prefHeight="253.0" prefWidth="296.0" styleClass="decisionButton" text="YES" />
-            <Button fx:id="noButton" mnemonicParsing="false" prefHeight="263.0" prefWidth="305.0" styleClass="decisionButton" text="NO" />
+            <Button fx:id="yesButton" mnemonicParsing="false" onAction="#clickYes" prefHeight="253.0" prefWidth="296.0" styleClass="decisionButton" text="YES" />
+            <Button fx:id="noButton" mnemonicParsing="false" onAction="#clickNo" prefHeight="263.0" prefWidth="305.0" styleClass="decisionButton" text="NO" />
          </children>
       </HBox>
    </children>

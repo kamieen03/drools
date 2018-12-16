@@ -13,8 +13,8 @@
 }
 
 .adviceText{
-    -fx-font-size: 16px;
-    -fx-text-fill: #B23A4A;
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
 }
 
 .decisionButton{

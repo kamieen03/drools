@@ -166,5 +166,11 @@
     "a" : "NONE",
     "advice" : "Control settings may be too high, especially volume.",
     "id" : 21
+  },
+  "112" : {
+    "q" : "Diagosis finished.",
+    "a" : "NONE",
+    "advice" : null,
+    "id" : 112
   }
 }

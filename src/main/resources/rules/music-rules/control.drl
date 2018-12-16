@@ -2,7 +2,10 @@ package rules
 import java.util.Scanner;
 import music.Question;
 import music.Question.Answer;
-import music.Controller;
+import music.Controller
+import javafx.application.Platform
+import java.lang.reflect.AnnotatedWildcardType
+import java.util.concurrent.CompletableFuture;
 dialect  "mvel"
 
 
@@ -15,6 +18,7 @@ rule "INIT"
 when
 then
     insert(Controller.loadQuestion(1));
+    System.out.println("xd");
 end
 
 
@@ -22,23 +26,31 @@ rule "AskQuestion"
 when
     qu : Question(q != null, a == Answer.NONE)
 then
-    if(qu.advice != null) System.out.println(qu.advice);
-    if(qu.q != null) {
-        System.out.println(qu.q);
-        System.out.print(">> ");
-        Scanner keyboard = new Scanner(System.in);
-        String answer = keyboard.nextLine();
-        if(answer == "y" || answer == "yes") qu.a = Answer.YES;
-        else qu.a = Answer.NO;
-        update(qu);
-    }
+    Controller.view.displayQuestion(qu);
+    //CompletableFuture.runAsync(()->System.out.printf("kupa")).thenAccept(i -> System.out.printf("elo"));
+//    while (qu.getA() != Answer.NONE );
+//    update(qu);
+    //Controller.view.displayQuestion(qu);
+//    if(qu.advice != null) System.out.println(qu.advice);
+//    if(qu.q != null) {
+//        System.out.println(qu.q);
+//        System.out.print(">> ");
+//        Scanner keyboard = new Scanner(System.in);
+//        String answer = keyboard.nextLine();
+//        if(answer == "y" || answer == "yes") qu.a = Answer.YES;
+//        else qu.a = Answer.NO;
+//        update(qu);
+//    }
 end
+
+
+
 
 rule "ShowFinalAdvice"
 when
     qu : Question(q == null)
 then
-    System.out.println(qu.advice);
+    Controller.view.displayQuestion(qu);
     insert(new FIXED())
 end
 
@@ -46,5 +58,5 @@ rule "IsFixed"
 when
     FIXED()
 then
-    System.out.println("Diagnosis finished.");
+    Controller.view.displayFinished();
 end

@@ -23,4 +23,25 @@ public class Question {
 
     public Question(){
     }
+
+    public String getQ() {
+        return q;
+    }
+
+    public String getAdvice() {
+        return advice;
+    }
+
+    public Answer getA() {
+        return a;
+    }
+
+    public Question clone(){
+        Question q = new Question();
+        q.id = this.id;
+        q.q = this.q;
+        q.a = this.a;
+        q.advice = this.advice;
+        return q;
+    }
 }
