@@ -18,7 +18,6 @@ rule "INIT"
 when
 then
     insert(Controller.loadQuestion(1));
-    System.out.println("xd");
 end
 
 
@@ -27,20 +26,6 @@ when
     qu : Question(q != null, a == Answer.NONE)
 then
     Controller.view.displayQuestion(qu);
-    //CompletableFuture.runAsync(()->System.out.printf("kupa")).thenAccept(i -> System.out.printf("elo"));
-//    while (qu.getA() != Answer.NONE );
-//    update(qu);
-    //Controller.view.displayQuestion(qu);
-//    if(qu.advice != null) System.out.println(qu.advice);
-//    if(qu.q != null) {
-//        System.out.println(qu.q);
-//        System.out.print(">> ");
-//        Scanner keyboard = new Scanner(System.in);
-//        String answer = keyboard.nextLine();
-//        if(answer == "y" || answer == "yes") qu.a = Answer.YES;
-//        else qu.a = Answer.NO;
-//        update(qu);
-//    }
 end
 
 

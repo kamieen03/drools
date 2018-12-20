@@ -5,7 +5,7 @@
 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>music</groupId>
-    <artifactId>DroolsExample</artifactId>
+    <artifactId>drools</artifactId>
     <version>1.0-SNAPSHOT</version>
     <repositories>
         <repository>
@@ -51,6 +51,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             <artifactId>drools-core</artifactId>
             <version>${runtime.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.drools</groupId>
             <artifactId>drools-compiler</artifactId>
@@ -83,10 +84,25 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.8.3</version>
+                <configuration>
+                    <mainClass>music.Controller</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <targetPath>../jfx/app/src/main/resources</targetPath>
+            </resource>
+        </resources>
+
     </build>
 </project>

@@ -53,9 +53,9 @@ public class DecisionScreen implements Initializable {
         Question q2 = Controller.loadQuestion(112);
         yesButton.setVisible(false);
         noButton.setVisible(false);
-        question.setText(q2.getQ());
-        advice.setText("");
-        adviceText.setText("");
+        Platform.runLater(()->{
+            question.setText(q2.getQ());
+        });
     }
 
      public void clickYes(){

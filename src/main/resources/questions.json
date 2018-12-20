@@ -102,7 +102,7 @@
     "id" : 19
   },
   "1" : {
-    "q" : "Is there sound?",
+    "q" : "Can you hear the sound?",
     "a" : "NONE",
     "advice" : null,
     "id" : 1
@@ -114,7 +114,7 @@
     "id" : 2
   },
   "3" : {
-    "q" : "Can you hear a sound?",
+    "q" : "Can you hear the sound?",
     "a" : "NONE",
     "advice" : "Check controls on amplifier for normal setting.Instrument controls should be all the way on.Also check standby switch, if any.",
     "id" : 3
@@ -168,7 +168,7 @@
     "id" : 21
   },
   "112" : {
-    "q" : "Diagosis finished.",
+    "q" : "Diagnosis finished.",
     "a" : "NONE",
     "advice" : null,
     "id" : 112
