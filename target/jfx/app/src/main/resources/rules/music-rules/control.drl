@@ -1,0 +1,47 @@
+package rules
+import java.util.Scanner;
+import music.Question;
+import music.Question.Answer;
+import music.Controller
+import javafx.application.Platform
+import java.lang.reflect.AnnotatedWildcardType
+import java.util.concurrent.CompletableFuture;
+dialect  "mvel"
+
+
+declare FIXED
+    f : Boolean
+end
+
+
+rule "INIT"
+when
+then
+    insert(Controller.loadQuestion(1));
+end
+
+
+rule "AskQuestion"
+when
+    qu : Question(q != null, a == Answer.NONE)
+then
+    Controller.view.displayQuestion(qu);
+end
+
+
+
+
+rule "ShowFinalAdvice"
+when
+    qu : Question(q == null)
+then
+    Controller.view.displayQuestion(qu);
+    insert(new FIXED())
+end
+
+rule "IsFixed"
+when
+    FIXED()
+then
+    Controller.view.displayFinished();
+end
